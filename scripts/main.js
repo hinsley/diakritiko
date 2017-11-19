@@ -15,8 +15,6 @@ function alEsperanta(latina_teksto) {
         .replace(/Sx/g, "Ŝ")
         .replace(/Ux/g, "Ŭ");
 
-    console.log(esperanta_teksto);
-
     return esperanta_teksto;
 }
 
@@ -34,7 +32,7 @@ function alLatina(esperanta_teksto) {
         .replace(/Ĵ/g, "Jx")
         .replace(/Ŝ/g, "Sx")
         .replace(/Ŭ/g, "Ux");
-    
+
     return latina_teksto;
 }
 
@@ -42,11 +40,11 @@ window.addEventListener("load", function() {
     var input_latina = document.getElementById("input-latina"),
         input_esperanta = document.getElementById("input-esperanta");
 
-    input_latina.addEventListener("change", function() {
+    input_latina.addEventListener("input", function() {
         input_esperanta.value = alEsperanta(input_latina.value);
     });
 
-    input_esperanta.addEventListener("change", function() {
+    input_esperanta.addEventListener("input", function() {
         input_latina.value = alLatina(input_esperanta.value);
     });
 });

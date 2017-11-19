@@ -20,6 +20,7 @@ div.container div.row {
     text-align: center;
 }
 
-div.container div.row input {
+div.container div.row textarea {
+    font-size: 1em;
     flex-grow: 1;
 }
