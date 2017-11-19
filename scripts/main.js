@@ -1,20 +1,19 @@
 "use strict";
 
 function alEsperanta(latina_teksto) {
-    var esperanta_teksto = latina_teksto;
-
-    esperanta_teksto = esperanta_teksto.split("cx").join("ĉ");
-    esperanta_teksto = esperanta_teksto.split("gx").join("ĝ");
-    esperanta_teksto = esperanta_teksto.split("hx").join("ĥ");
-    esperanta_teksto = esperanta_teksto.split("jx").join("ĵ");
-    esperanta_teksto = esperanta_teksto.split("sx").join("ŝ");
-    esperanta_teksto = esperanta_teksto.split("ux").join("ŭ");
-    esperanta_teksto = esperanta_teksto.split("Cx").join("Ĉ");
-    esperanta_teksto = esperanta_teksto.split("Gx").join("Ĝ");
-    esperanta_teksto = esperanta_teksto.split("Hx").join("Ĥ");
-    esperanta_teksto = esperanta_teksto.split("Jx").join("Ĵ");
-    esperanta_teksto = esperanta_teksto.split("Sx").join("Ŝ");
-    esperanta_teksto = esperanta_teksto.split("Ux").join("Ŭ");
+    var esperanta_teksto = latina_teksto
+        .replace(/cx/g, "ĉ")
+        .replace(/gx/g, "ĝ")
+        .replace(/hx/g, "ĥ")
+        .replace(/jx/g, "ĵ")
+        .replace(/sx/g, "ŝ")
+        .replace(/ux/g, "ŭ")
+        .replace(/Cx/g, "Ĉ")
+        .replace(/Gx/g, "Ĝ")
+        .replace(/Hx/g, "Ĥ")
+        .replace(/Jx/g, "Ĵ")
+        .replace(/Sx/g, "Ŝ")
+        .replace(/Ux/g, "Ŭ");
 
     console.log(esperanta_teksto);
 
@@ -22,53 +21,20 @@ function alEsperanta(latina_teksto) {
 }
 
 function alLatina(esperanta_teksto) {
-    var latina_teksto = "";
-
-    for (var i in esperanta_teksto) {
-        var letero = esperanta_teksto[i];
-
-        switch(letero) {
-            case "ĉ":
-                latina_teksto += "cx";
-                break;
-            case "ĝ":
-                latina_teksto += "gx";
-                break;
-            case "ĥ":
-                latina_teksto += "hx";
-                break;
-            case "ĵ":
-                latina_teksto += "jx";
-                break;
-            case "ŝ":
-                latina_teksto += "sx";
-                break;
-            case "ŭ":
-                latina_teksto += "ux";
-                break;
-            case "Ĉ":
-                latina_teksto += "Cx";
-                break;
-            case "Ĝ":
-                latina_teksto += "Gx";
-                break;
-            case "Ĥ":
-                latina_teksto += "Hx";
-                break;
-            case "Ĵ":
-                latina_teksto += "Jx";
-                break;
-            case "Ŝ":
-                latina_teksto += "Sx";
-                break;
-            case "Ŭ":
-                latina_teksto += "Ux";
-                break;
-            default:
-                latina_teksto += letero;
-        }
-    }
-
+    var latina_teksto = esperanta_teksto
+        .replace(/ĉ/g, "cx")
+        .replace(/ĝ/g, "gx")
+        .replace(/ĥ/g, "hx")
+        .replace(/ĵ/g, "jx")
+        .replace(/ŝ/g, "sx")
+        .replace(/ŭ/g, "ux")
+        .replace(/Ĉ/g, "Cx")
+        .replace(/Ĝ/g, "Gx")
+        .replace(/Ĥ/g, "Hx")
+        .replace(/Ĵ/g, "Jx")
+        .replace(/Ŝ/g, "Sx")
+        .replace(/Ŭ/g, "Ux");
+    
     return latina_teksto;
 }
 
